@@ -1,5 +1,6 @@
 #include "board.hpp"
 #include <iostream>
+#include <exception>
 using namespace std;
 
 //This is the player class, for each user

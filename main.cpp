@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "board1.hpp"
+#include "board.hpp"
 #include "player.cpp"
 using namespace std;
 
@@ -29,7 +29,7 @@ int main()
         cd = p1.getMove();
         while (!b.add_marker(cd, p1.getMarker()))
         {
-            cout << "Ivalid move. Try again" << endl;
+            cout << "Invalid move. Try again" << endl;
             cd = p1.getMove();
         }
         b.add_marker(cd, p1.getMarker());
@@ -38,7 +38,7 @@ int main()
         cd = p2.getMove();
         while (!b.add_marker(cd, p2.getMarker()))
         {
-            cout << "Ivalid move. Try again" << endl;
+            cout << "Invalid move. Try again" << endl;
             cd = p2.getMove();
         }
         b.add_marker(cd, p2.getMarker());
