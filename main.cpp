@@ -50,7 +50,6 @@ int main()
                 cd = p2.getMove();
             }
             b.add_marker(cd, p2.getMarker());
-            cout << b.to_string();
         }
         cout << endl;
         if (b.has_won(p1.getMarker()))
