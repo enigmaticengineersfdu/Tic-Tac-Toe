@@ -60,11 +60,11 @@ std::string board::to_string() const
     std::stringstream ss;
 
     /*Create the top index row*/
-    ss << "  " << 1 << '|' << 2 << '|' << 3 << '\n' << "__________\n";
+    ss << "    " << 1 << '|' << 2 << '|' << 3 << '\n' << "   -------\n";
     /*Create each board row*/
     for (size_t i = 0; i < 3; ++i) {
-        ss << i + 1 << ' ' << mk_to_char(bd[i][0]) << "|" << mk_to_char(bd[i][1]) << "|" << mk_to_char(bd[i][2]) << '\n';
-        ss << "__________\n";
+        ss << i + 1 << ' ' << "  " << mk_to_char(bd[i][0]) << "|" << mk_to_char(bd[i][1]) << "|" << mk_to_char(bd[i][2]) << '\n';
+        ss << "   -------\n";
     }
     //return the result as a string
     return ss.str();
