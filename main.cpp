@@ -30,10 +30,11 @@ int main()
     player p1(name1, marker::X);
     player p2(name2, marker::O);
 
+    cout << endl << b.to_string();
+
     do {
         while ((!b.has_won(p1.getMarker())) && (!b.has_won(p2.getMarker())) && (!b.are_tied()))
         {
-            cout << endl << b.to_string();
             cd = p1.getMove();
             while (!b.add_marker(cd, p1.getMarker()))
             {
@@ -50,6 +51,7 @@ int main()
                 cd = p2.getMove();
             }
             b.add_marker(cd, p2.getMarker());
+            cout << b.to_string();
         }
         cout << endl;
         if (b.has_won(p1.getMarker()))
