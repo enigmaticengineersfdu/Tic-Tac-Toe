@@ -18,8 +18,8 @@ int main()
         << "\nThere are two players that will take turns placing an 'X' or an 'O' on the board. "
         << "\nThey will input their names before the game starts as prompted. To input where you"
         << "\nwould like to position your letter, enter the row number followed "
-        << "by the column number \n(separated by a space or enter key). The goal of the game"
-        << "\nis to get three of your respective letters in a row, column, or diagonally."
+        << "by the column number. \nThe goal of the game is to get three of your respective letters"
+        << " in a row, column, or diagonally."
         << "\nIf either player is unable to do so, the game results in a draw. "
         << "\nAt the end pf the game, if you want to have a rematch, answer 'yes' when prompted."
         << endl << endl << endl;
