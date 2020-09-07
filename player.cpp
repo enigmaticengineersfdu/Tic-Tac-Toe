@@ -1,6 +1,6 @@
 #include "board.hpp"
 #include <iostream>
-#include <exception>
+#include <sstream>
 using namespace std;
 
 //This is the player class, for each user
@@ -9,7 +9,7 @@ private:
 	string name;
 	coord cd;
 	marker m;
-	int moveX, moveY;
+	string moveX, moveY;
 
 public:
 
@@ -18,8 +18,8 @@ public:
 	{
 		name = n;
 		m = m1;
-		moveX = 0;
-		moveY = 0;
+		moveX = "";
+		moveY = "";
 
 	}
 
@@ -39,13 +39,35 @@ public:
 	//This function asks for the player's moves, and returns the coordinates 
 	coord getMove()
 	{
-		cout << "Where would " << name << " like to move? Enter row then column #. " << endl;
-		cin >> moveX >> moveY;
-		cd.first = moveX;
-		cd.second = moveY;
+		cout << "Where would " << name << " like to move? \n\n";
+		cout << "Enter row: ";
+		cin >> moveX;
+
+		while (!isdigit(moveX[0]))
+		{
+			cout << "\nIncorrect: Must enter a number. " << endl;
+			cout << "Enter row: ";
+			cin >> moveX;
+		}
+		moveX = moveX[0];
+		stringstream s(moveX);
+		s >> cd.first;
+
+		cout << "Enter column: ";
+		cin >> moveY;
+		cout << endl;
+		while (!isdigit(moveY[0]))
+		{
+			cout << "\nIncorrect: Must enter a number. " << endl;
+			cout << "Enter column: ";
+			cin >> moveY;
+		}
+		moveY = moveY[0];
+		stringstream ss(moveY);
+		ss >> cd.second;
+
 		return cd;
+
 	}
-
-
 
 };
